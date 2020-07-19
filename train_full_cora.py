@@ -73,7 +73,7 @@ model = GraphSAGE(1433,
                   7,
                   2,  # n_layers >= 2
                   nn.ReLU(),
-                  "pool")
+                  "mean")
 
 
 def load_cora_data():
@@ -99,7 +99,7 @@ def load_cora_data():
 
 g, features, labels, mask, val_mask, test_mask = load_cora_data()
 
-optimizer = torch.optim.Adam(model.parameters(), lr=1e-2, weight_decay=5e-4)
+optimizer = torch.optim.Adam(model.parameters(), lr=0.003, weight_decay=5e-4)
 loss_fcn = nn.CrossEntropyLoss()
 
 def evaluate(model, graph, features, labels, mask):

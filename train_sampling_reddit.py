@@ -240,15 +240,15 @@ Entry point
 
 # Parameters
 gpu = 0
-aggregation = 'pool'
+aggregation = 'mean'
 num_epochs = 20
-num_hidden = 16
+num_hidden = 256
 num_layers = 2  # n_layers >= 2
 fan_out = '10,25'
-batch_size = 1000
+batch_size = 512
 log_every = 20  # frequency of printout
 eval_every = 10
-lr = 0.003
+lr = 0.0003
 dropout = 0.5
 
 if gpu >= 0:
